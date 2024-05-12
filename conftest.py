@@ -10,8 +10,8 @@ def driver():
     desired_caps = {
         'platformName': 'Android',
         "deviceName": "5200814efe0e35db",
-        "appPackage": "xxxxxxxxxx",
-        "appActivity": "com.xxxxxxx.xxxx.MainActivity",
+        "appPackage": "com.gorafeeq.qatar",
+        "appActivity": "com.gorafeeq.qatar.MainActivity",
         "automationName": "UiAutomator2",
         "noReset": True
     }
@@ -22,16 +22,7 @@ def driver():
 
 @pytest.fixture(scope="module")
 def stop_when_element_appears(driver):
-    """
-    Wait for the specified element to become visible on the screen.
-
-    Args:
-        driver: The WebDriver instance.
-        timeout (int): The maximum time in seconds to wait for the element (default: 10).
-
-    Returns:
-        float: The time taken to reach the element.
-    """
+    
     scroll_view_locator = (MobileBy.ACCESSIBILITY_ID, "search_bar_textfield")
     start_time = time.time()
     WebDriverWait(driver, 10).until(EC.presence_of_element_located(scroll_view_locator))
